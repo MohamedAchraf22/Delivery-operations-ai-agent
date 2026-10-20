@@ -4,8 +4,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-BASE_URL = os.environ.get("SHIPBLU_BASE_URL", "http://localhost:8000/api/v1")
-API_KEY = os.environ.get("SHIPBLU_API_KEY", "")
+BASE_URL = os.environ.get("DELIVERY_API_BASE_URL", os.environ.get("API_BASE_URL", "http://localhost:8000/api/v1"))
+API_KEY = os.environ.get("DELIVERY_API_KEY", os.environ.get("API_KEY", ""))
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "")
 
 HEADERS = {
@@ -25,4 +25,3 @@ DEFAULT_COLUMNS = [
 ]
 
 EXPORTS_DIR = Path("exports")
-
